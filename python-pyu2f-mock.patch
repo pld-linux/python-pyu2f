@@ -1,0 +1,151 @@
+--- pyu2f-0.1.4/pyu2f/tests/customauthenticator_test.py.orig	2018-04-27 05:35:42.000000000 +0200
++++ pyu2f-0.1.4/pyu2f/tests/customauthenticator_test.py	2018-05-20 10:39:46.960647979 +0200
+@@ -19,7 +19,6 @@
+ import struct
+ import sys
+ 
+-import mock
+ from pyu2f import errors
+ from pyu2f import model
+ from pyu2f.convenience import customauthenticator
+@@ -29,6 +28,10 @@
+   import unittest2 as unittest  # pylint: disable=g-import-not-at-top
+ else:
+   import unittest  # pylint: disable=g-import-not-at-top
++try:
++  import mock
++except:
++  from unittest import mock
+ 
+ 
+ # Input/ouput values recorded from a successful signing flow
+--- pyu2f-0.1.4/pyu2f/tests/hardware_test.py.orig	2018-04-27 05:35:42.000000000 +0200
++++ pyu2f-0.1.4/pyu2f/tests/hardware_test.py	2018-05-20 10:40:18.273980865 +0200
+@@ -16,8 +16,6 @@
+ 
+ import sys
+ 
+-import mock
+-
+ from pyu2f import errors
+ from pyu2f import hardware
+ 
+@@ -25,6 +23,10 @@
+   import unittest2 as unittest  # pylint: disable=g-import-not-at-top
+ else:
+   import unittest  # pylint: disable=g-import-not-at-top
++try:
++  import mock
++except:
++  from unittest import mock
+ 
+ 
+ class HardwareTest(unittest.TestCase):
+--- pyu2f-0.1.4/pyu2f/tests/hidtransport_test.py.orig	2018-04-27 05:35:42.000000000 +0200
++++ pyu2f-0.1.4/pyu2f/tests/hidtransport_test.py	2018-05-20 10:40:46.907313957 +0200
+@@ -17,8 +17,6 @@
+ from six.moves import range
+ import sys
+ 
+-import mock
+-
+ from pyu2f import errors
+ from pyu2f import hidtransport
+ from pyu2f.tests.lib import util
+@@ -27,6 +25,10 @@
+   import unittest2 as unittest  # pylint: disable=g-import-not-at-top
+ else:
+   import unittest  # pylint: disable=g-import-not-at-top
++try:
++  import mock
++except:
++  from unittest import mock
+ 
+ 
+ def MakeKeyboard(path, usage):
+--- pyu2f-0.1.4/pyu2f/tests/localauthenticator_test.py.orig	2018-04-27 05:35:42.000000000 +0200
++++ pyu2f-0.1.4/pyu2f/tests/localauthenticator_test.py	2018-05-20 10:41:30.623980178 +0200
+@@ -17,7 +17,6 @@
+ import base64
+ import sys
+ 
+-import mock
+ from pyu2f import errors
+ from pyu2f import model
+ from pyu2f.convenience import localauthenticator
+@@ -27,6 +26,10 @@
+   import unittest2 as unittest  # pylint: disable=g-import-not-at-top
+ else:
+   import unittest  # pylint: disable=g-import-not-at-top
++try:
++  import mock
++except:
++  from unittest import mock
+ 
+ 
+ # Input/ouput values recorded from a successful signing flow
+--- pyu2f-0.1.4/pyu2f/tests/u2f_test.py.orig	2018-04-27 05:35:42.000000000 +0200
++++ pyu2f-0.1.4/pyu2f/tests/u2f_test.py	2018-05-20 10:41:58.807313141 +0200
+@@ -16,8 +16,6 @@
+ 
+ import sys
+ 
+-import mock
+-
+ from pyu2f import errors
+ from pyu2f import model
+ from pyu2f import u2f
+@@ -26,6 +24,10 @@
+   import unittest2 as unittest  # pylint: disable=g-import-not-at-top
+ else:
+   import unittest  # pylint: disable=g-import-not-at-top
++try:
++  import mock
++except:
++  from unittest import mock
+ 
+ 
+ class U2fTest(unittest.TestCase):
+--- pyu2f-0.1.4/pyu2f/tests/hid/linux_test.py.orig	2018-04-27 05:35:42.000000000 +0200
++++ pyu2f-0.1.4/pyu2f/tests/hid/linux_test.py	2018-05-20 10:42:24.517312813 +0200
+@@ -18,8 +18,6 @@
+ import os
+ import sys
+ 
+-import mock
+-
+ from pyu2f.hid import linux
+ 
+ # Since the builtins name changed between Python 2 and Python 3, we have to
+@@ -38,6 +36,10 @@
+   import unittest2 as unittest  # pylint: disable=g-import-not-at-top
+ else:
+   import unittest  # pylint: disable=g-import-not-at-top
++try:
++  import mock
++except:
++  from unittest import mock
+ 
+ 
+ # These are base64 encoded report descriptors of a Yubico token
+--- pyu2f-0.1.4/pyu2f/tests/hid/macos_test.py.orig	2018-04-27 05:35:42.000000000 +0200
++++ pyu2f-0.1.4/pyu2f/tests/hid/macos_test.py	2018-05-20 10:43:08.303979016 +0200
+@@ -16,7 +16,6 @@
+ 
+ import ctypes
+ import sys
+-import mock
+ 
+ from pyu2f import errors
+ from pyu2f.hid import macos
+@@ -26,6 +25,10 @@
+   import unittest2 as unittest  # pylint: disable=g-import-not-at-top
+ else:
+   import unittest  # pylint: disable=g-import-not-at-top
++try:
++  import mock
++except:
++  from unittest import mock
+ 
+ 
+ def init_mock_iokit(mock_iokit):
