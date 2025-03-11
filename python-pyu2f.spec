@@ -8,7 +8,7 @@ Summary:	U2F host library for interacting with a U2F device over USB
 Summary(pl.UTF-8):	Biblioteka hosta U2F do współpracy z urządzeniami U2F po USB
 Name:		python-pyu2f
 Version:	0.1.4
-Release:	8
+Release:	9
 License:	Apache v2.0
 Group:		Libraries/Python
 #Source0Download: https://github.com/google/pyu2f/releases
